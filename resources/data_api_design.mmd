@@ -1,0 +1,23 @@
+
+    classDiagram
+        class Game{
+            +int score
+            +bool game_over
+            +start_game()
+            +end_game()
+            +update_display()
+        }
+        class Snake{
+            +list body
+            +str direction
+            +move()
+            +grow()
+            +check_collision()
+        }
+        class Food{
+            +tuple position
+            +generate()
+        }
+        Game "1" -- "1" Snake: controls
+        Game "1" -- "1" Food: controls
+    

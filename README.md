@@ -1,1 +1,2 @@
-# cli_snake_game_self
+# cli_snake_game
+Testing sweep on a simple CLI game
