@@ -55,7 +55,7 @@ class Game:
     def update_display(self):
         self.screen.fill((0, 0, 0))
         for segment in self.snake.body:
-            pygame.draw.rect(self.screen, (0, 0, 255), pygame.Rect(segment[0], segment[1], 10, 10))
+            pygame.draw.rect(self.screen, (0, 255, 0), pygame.Rect(segment[0], segment[1], 10, 10))
         pygame.draw.rect(self.screen, (255, 0, 0), pygame.Rect(self.food.position[0], self.food.position[1], 10, 10))
         #self.render_score()
         pygame.display.flip()
