@@ -18,12 +18,6 @@ class Game:
         font = pygame.font.Font(None, 36)
         text = font.render('Score: ' + str(self.score), True, (255, 255, 255))
         self.screen.blit(text, (self.screen.get_width() - text.get_width() - 10, 10))
-        self.screen = pygame.display.set_mode(self.screen.get_size())
-        self.clock = pygame.time.Clock()
-        self.score = 0
-        self.game_over = False
-        self.snake = Snake()
-        self.food = Food()
 
     def start_game(self):
         while not self.game_over:
