@@ -33,10 +33,11 @@ class Game:
                         self.snake.direction = "LEFT"
                     elif event.key == pygame.K_RIGHT:
                         self.snake.direction = "RIGHT"
-            self.snake.move()
-            if self.snake.check_collision():
+            if self.snake.move():
                 self.game_over = True
-            if self.snake.body[0] == self.food.position:
+            elif self.snake.check_collision():
+                self.game_over = True
+            elif self.snake.body[0] == self.food.position:
                 self.snake.grow()
                 self.score += 1
                 self.food.generate()

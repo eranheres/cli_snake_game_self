@@ -12,6 +12,12 @@ class Snake:
         new_head = move_directions.get(self.direction)
         self.body.insert(0, new_head)
         self.body.pop()
+    
+        # Check if the snake has hit the border
+        if new_head[0] < 0 or new_head[0] > 790 or new_head[1] < 0 or new_head[1] > 590:
+            return True
+        else:
+            return False
 
     def grow(self):
         self.body.append(self.body[-1])
