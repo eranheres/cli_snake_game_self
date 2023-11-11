@@ -17,7 +17,7 @@ class Game:
     def render_score(self):
         font = pygame.font.Font(None, 36)
         text = font.render('Score: ' + str(self.score), True, (255, 255, 255))
-        self.screen.blit(text, (self.screen.get_width() - text.get_width(), 0))
+        self.screen.blit(text, (self.screen.get_width() - text.get_width() - 10, 10))
         self.screen = pygame.display.set_mode(self.screen.get_size())
         self.clock = pygame.time.Clock()
         self.score = 0
@@ -57,5 +57,5 @@ class Game:
         for segment in self.snake.body:
             pygame.draw.rect(self.screen, (0, 0, 255), pygame.Rect(segment[0], segment[1], 10, 10))
         pygame.draw.rect(self.screen, (255, 0, 0), pygame.Rect(self.food.position[0], self.food.position[1], 10, 10))
-        #self.render_score()
+        self.render_score()
         pygame.display.flip()
