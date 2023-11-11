@@ -48,6 +48,10 @@ class Game:
 
     def update_display(self):
         self.screen.fill((0, 0, 0))
+        pygame.draw.rect(self.screen, (255, 255, 255), pygame.Rect(0, 0, self.screen.get_width(), 10))  # Top border
+        pygame.draw.rect(self.screen, (255, 255, 255), pygame.Rect(0, 0, 10, self.screen.get_height()))  # Left border
+        pygame.draw.rect(self.screen, (255, 255, 255), pygame.Rect(0, self.screen.get_height() - 10, self.screen.get_width(), 10))  # Bottom border
+        pygame.draw.rect(self.screen, (255, 255, 255), pygame.Rect(self.screen.get_width() - 10, 0, 10, self.screen.get_height()))  # Right border
         for segment in self.snake.body:
             pygame.draw.rect(self.screen, (0, 255, 0), pygame.Rect(segment[0], segment[1], 10, 10))
         pygame.draw.rect(self.screen, (255, 0, 0), pygame.Rect(self.food.position[0], self.food.position[1], 10, 10))
