@@ -8,6 +8,7 @@ class TestSnake(unittest.TestCase):
     def test_init(self):
         self.assertEqual(self.snake.body, [(40, 40), (30, 40), (20, 40)])
         self.assertEqual(self.snake.direction, "RIGHT")
+        self.assertEqual(len(self.snake.body), 3)
 
     def test_move(self):
         self.snake.move()
