@@ -1,8 +1,8 @@
 ## game.py
 import pygame
 import time
-from snake import Snake
-from food import Food
+from cli_snake_game.snake import Snake
+from cli_snake_game.food import Food
 
 class Game:
     def __init__(self, screen_size: tuple = (800, 600)):
@@ -17,13 +17,7 @@ class Game:
     def render_score(self):
         font = pygame.font.Font(None, 36)
         text = font.render('Score: ' + str(self.score), True, (255, 255, 255))
-        self.screen.blit(text, (self.screen.get_width() - text.get_width(), 0))
-        self.screen = pygame.display.set_mode(self.screen.get_size())
-        self.clock = pygame.time.Clock()
-        self.score = 0
-        self.game_over = False
-        self.snake = Snake()
-        self.food = Food()
+        self.screen.blit(text, (self.screen.get_width() - text.get_width() - 10, 10))
 
     def start_game(self):
         while not self.game_over:
@@ -39,10 +33,11 @@ class Game:
                         self.snake.direction = "LEFT"
                     elif event.key == pygame.K_RIGHT:
                         self.snake.direction = "RIGHT"
-            self.snake.move()
-            if self.snake.check_collision():
+            if self.snake.move():
                 self.game_over = True
-            if self.snake.body[0] == self.food.position:
+            elif self.snake.check_collision():
+                self.game_over = True
+            elif self.snake.body[0] == self.food.position:
                 self.snake.grow()
                 self.score += 1
                 self.food.generate()
@@ -54,8 +49,12 @@ class Game:
 
     def update_display(self):
         self.screen.fill((0, 0, 0))
+        pygame.draw.rect(self.screen, (255, 255, 255), pygame.Rect(0, 0, self.screen.get_width(), 10))  # Top border
+        pygame.draw.rect(self.screen, (255, 255, 255), pygame.Rect(0, 0, 10, self.screen.get_height()))  # Left border
+        pygame.draw.rect(self.screen, (255, 255, 255), pygame.Rect(0, self.screen.get_height() - 10, self.screen.get_width(), 10))  # Bottom border
+        pygame.draw.rect(self.screen, (255, 255, 255), pygame.Rect(self.screen.get_width() - 10, 0, 10, self.screen.get_height()))  # Right border
         for segment in self.snake.body:
             pygame.draw.rect(self.screen, (0, 0, 255), pygame.Rect(segment[0], segment[1], 10, 10))
         pygame.draw.rect(self.screen, (255, 0, 0), pygame.Rect(self.food.position[0], self.food.position[1], 10, 10))
-        #self.render_score()
+        self.render_score()
         pygame.display.flip()
