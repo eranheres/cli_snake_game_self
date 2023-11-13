@@ -74,7 +74,7 @@ class Game:
             if segment == self.snake.body[0]:
                 pygame.draw.rect(
                     self.screen,
-                    (255, 0, 0),
+                    (144, 238, 144),
                     pygame.Rect(segment[0], segment[1], 10, 10),
                 )
             else:
