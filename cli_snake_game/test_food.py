@@ -1,5 +1,7 @@
 import unittest
+
 from food import Food
+
 
 class TestFood(unittest.TestCase):
     def test_init(self):
@@ -13,5 +15,6 @@ class TestFood(unittest.TestCase):
         self.assertTrue(0 <= x <= 790 and x % 10 == 0)
         self.assertTrue(0 <= y <= 590 and y % 10 == 0)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
