@@ -1,8 +1,8 @@
 import unittest
 from unittest.mock import MagicMock, patch
 
-from cli_snake_game.game import Game
-from cli_snake_game.main import main
+from game import Game
+from main import main
 
 
 class TestMain(unittest.TestCase):
