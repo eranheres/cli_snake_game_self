@@ -1,5 +1,7 @@
 import unittest
+
 from cli_snake_game.food import Food
+
 
 class TestFood(unittest.TestCase):
     def test_init(self):
@@ -19,5 +21,6 @@ class TestFood(unittest.TestCase):
         self.assertIsInstance(food.position[0], int)
         self.assertIsInstance(food.position[1], int)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
