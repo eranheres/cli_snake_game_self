@@ -1,4 +1,4 @@
-from game import Game
+from cli_snake_game.game import Game
 
 def main():
     game = Game()
