@@ -1,5 +1,7 @@
 import unittest
-from cli_snake_game.snake import Snake, Food
+
+from cli_snake_game.snake import Food, Snake
+
 
 class TestSnake(unittest.TestCase):
     def test_init(self):
@@ -24,6 +26,7 @@ class TestSnake(unittest.TestCase):
         snake = Snake([(40, 40), (30, 40), (20, 40), (40, 40)])
         self.assertTrue(snake.check_collision())
 
+
 class TestFood(unittest.TestCase):
     def test_init(self):
         food = Food()
@@ -35,6 +38,7 @@ class TestFood(unittest.TestCase):
         x, y = food.position
         self.assertTrue(0 <= x <= 790)
         self.assertTrue(0 <= y <= 590)
+
 
 if __name__ == "__main__":
     unittest.main()
