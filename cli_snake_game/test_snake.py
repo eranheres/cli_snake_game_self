@@ -1,5 +1,7 @@
 import unittest
+
 from snake import Snake
+
 
 class TestSnake(unittest.TestCase):
     def setUp(self):
@@ -23,5 +25,6 @@ class TestSnake(unittest.TestCase):
         self.snake.body[0] = (50, 40)
         self.assertFalse(self.snake.check_collision())
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
