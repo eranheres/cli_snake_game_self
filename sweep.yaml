@@ -44,3 +44,5 @@ sandbox:
   check:
     - trunk fmt {file_path} || return 0
     - trunk check --fix --print-failures {file_path}
+    - pytest {file_path}
+    
