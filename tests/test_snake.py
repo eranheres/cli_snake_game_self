@@ -3,7 +3,7 @@ from cli_snake_game.snake import Snake, Food
 
 class TestSnake(unittest.TestCase):
     def test_init(self):
-        snake = Snake()
+        snake = Snake([(40, 40), (30, 40), (20, 40)])
         self.assertEqual(snake.body, [(40, 40), (30, 40), (20, 40)])
         self.assertEqual(snake.direction, "RIGHT")
 
