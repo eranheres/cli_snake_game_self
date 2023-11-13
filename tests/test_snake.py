@@ -6,6 +6,7 @@ from cli_snake_game.snake import Food, Snake
 class SnakeTest(unittest.TestCase):
     def test_init(self):
         snake = Snake()
+        self.assertEqual(len(snake.body), 3)
         self.assertEqual(snake.body, [(40, 40), (30, 40), (20, 40)])
         self.assertEqual(snake.direction, "RIGHT")
 
