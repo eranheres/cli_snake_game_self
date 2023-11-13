@@ -3,7 +3,7 @@ from unittest.mock import patch
 
 import pygame
 
-from cli_snake_game.game import Game
+from game import Game
 
 
 class TestGame(unittest.TestCase):
