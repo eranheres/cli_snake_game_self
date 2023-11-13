@@ -1,7 +1,7 @@
 ## game.py
 import pygame
 import time
-from snake import Snake
+from .snake import Snake
 from food import Food
 
 class Game:
