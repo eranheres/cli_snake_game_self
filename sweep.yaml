@@ -41,7 +41,6 @@ docs: []
 sandbox:
   install:
     - trunk init
-    - pip install pytest
     - pip install -r requirements.txt
   check:
     - trunk fmt {file_path} || return 0
