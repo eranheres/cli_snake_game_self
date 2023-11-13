@@ -1,8 +1,8 @@
 ## game.py
 import pygame
 import time
-from snake import Snake
-from food import Food
+from cli_snake_game.snake import Snake
+from cli_snake_game.food import Food
 
 class Game:
     def __init__(self, screen_size: tuple = (800, 600)):
