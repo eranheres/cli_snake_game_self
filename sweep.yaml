@@ -42,6 +42,7 @@ sandbox:
   install:
     - trunk init
     - pip install pytest
+    - pip install -r requirements.txt
   check:
     - trunk fmt {file_path} || return 0
     - trunk check --fix --print-failures {file_path}
